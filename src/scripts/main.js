@@ -1,10 +1,7 @@
-<<<<<<< HEAD
 import dbcalls from "./auth/dbcalls.js"
 
-=======
 import buildForm from "./auth/registerForm.js"
 import loginForm from "./auth/loginForm.js"
->>>>>>> master
 /*
     Import all the tools into main.js that are needed to display
     the initial UI to the user. Either the login form should appear
