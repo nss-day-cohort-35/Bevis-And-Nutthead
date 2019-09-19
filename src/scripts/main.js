@@ -1,3 +1,5 @@
+import dbcalls from "./auth/dbcalls.js"
+
 import buildForm from "./auth/registerForm.js"
 import loginForm from "./auth/loginForm.js"
 /*
@@ -6,6 +8,13 @@ import loginForm from "./auth/loginForm.js"
     or the dashboard should be rendered.
 */
 
+//const message = "Time to build an application that gives you all the information you need in a Nutshell"
+
+//const container = document.querySelector("#container").innerHTML
+const test = dbcalls.getUserId().then(data=>{
+    console.log(data);
+})
+//console.log(message)
 // const message = "Time to build an application that gives you all the information you need in a Nutshell"
 
 const container = document.querySelector("#container")
