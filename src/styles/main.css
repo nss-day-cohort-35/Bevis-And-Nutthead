@@ -1,0 +1,14 @@
+.registerForm{
+    margin: 5px;
+    width: 50%;
+}
+
+.loginForm{
+    margin: 5px;
+    width: 50%;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+}
