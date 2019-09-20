@@ -1,0 +1,57 @@
+.registerForm {
+    margin: 5px;
+    width: 50%;
+}
+
+.loginForm {
+    margin: 5px;
+    width: 50%;
+}
+
+#container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* FOOTER STYLES */
+
+.footerList{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    top: 0;
+    height: 70px;
+    width: 70%;
+    text-align: center;
+    padding-left: 0;
+
+}
+
+.footer {
+    background:white;
+    bottom: 0;
+    width: 100%;
+    height: 84px;
+    /* border: 7px solid black; */
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.socialIcon {
+    height: 110px;
+    width: auto;
+}
+
+.footerItem{
+    list-style-type: none;
+    float: left;
+    text-decoration-line: none;
+    height: 40px;
+    width: auto;
+    z-index: 5;
+}
+
+
+/* END OF FOOTER */
