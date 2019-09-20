@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body
 {
   background-color: wheat;
@@ -52,4 +53,19 @@ footer
   {
     margin-bottom: 1vh;
   }
+=======
+.registerForm{
+    margin: 5px;
+    width: 50%;
+}
+
+.loginForm{
+    margin: 5px;
+    width: 50%;
+}
+
+#container{
+    display: flex;
+    flex-direction: row;
+>>>>>>> b7a53d10460fba7907544c8c3ad0b36b4473b9c8
 }
