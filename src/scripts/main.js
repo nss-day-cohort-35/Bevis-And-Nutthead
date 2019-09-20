@@ -1,6 +1,7 @@
 import eventListeners from "./auth/eventListeners.js"
 import buildForm from "./auth/registerForm.js"
 import loginForm from "./auth/loginForm.js"
+import emailLogin from "./auth/userLogin.js"
 /*
     Import all the tools into main.js that are needed to display
     the initial UI to the user. Either the login form should appear
@@ -21,5 +22,3 @@ container.innerHTML += buildForm()
 container.innerHTML += loginForm()
 
 eventListeners.myListener()
-
-

@@ -1,4 +1,5 @@
 import userAuthientication from "./registerUser.js"
+import userLogin from "./userLogin.js"
 
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
@@ -11,11 +12,17 @@ const eventListeners = {
             if (event.target.classList.value === "registerButton") {
                 console.log("firing after")
                 userAuthientication.registerUser()
-            } else {
+            } else if (event.target.classList.value === "loginButton") {
+                console.log(event)
+                userLogin();
                 // alert("You gotta Sign Up!")
+            } else {
+                console.log("Hello")
             }
         })
     }
 }
+
+
 
 export default eventListeners
