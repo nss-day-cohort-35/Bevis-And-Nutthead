@@ -10,6 +10,7 @@ function loginForm() {
                 <label>Password:</label>
                 <input type="text" placeholder="Password">
             </fieldset>
+            <button type="button">Login</button>
         </form>
     </div>
     `
