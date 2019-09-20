@@ -1,11 +1,11 @@
 import dbCalls from "./dbcalls.js"
-import loginUser from "./userLogin.js"
+import login from "./userLogin.js"
 const userAuthientication = {
 
     registerUser() {
         let email = document.querySelector(".emailInput")
         let password = document.querySelector(".passwordInput")
-        let dateOfBirth = document.querySelector(".dateInput")
+        let dateOfBirth = document.querySelector(".dateOfBirthInput")
 
         let newUser = {
             email: "",
@@ -25,8 +25,8 @@ const userAuthientication = {
             newUser.password = password.value
             newUser.dateOfBirth = dateOfBirth.value
             dbCalls.postUser(newUser)
-                .then(response => response.json())
-                .then(loginUser());
+                .then(user => user.json())
+                .then((parsedUser) => login.registrationLogin(parsedUser));
         }
     }
 }
