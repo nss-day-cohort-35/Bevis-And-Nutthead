@@ -1,4 +1,3 @@
-// import dbcalls from "./auth/dbcalls.js"
 import eventListeners from "./auth/eventListeners.js"
 import buildForm from "./auth/registerForm.js"
 import loginForm from "./auth/loginForm.js"
