@@ -8,7 +8,7 @@ function buildForm() {
         </fieldset>
         <fieldset>
             <label>Password:</label>
-            <input type="text" placeholder="Password" class="passwordInput" id="password-input">
+            <input type="password" placeholder="Password" class="passwordInput" id="password-input">
         </fieldset>
         <fieldset>
             <label>Birthday:</label>
