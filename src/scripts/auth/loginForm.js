@@ -8,7 +8,7 @@ function loginForm() {
             </fieldset>
             <fieldset>
                 <label>Password:</label>
-                <input type="text" placeholder="Password" class="passwordLoginInput">
+                <input type="password" placeholder="Password" class="passwordLoginInput">
             </fieldset>
             <button type="button" class="loginButton">Login</button>
         </form>
