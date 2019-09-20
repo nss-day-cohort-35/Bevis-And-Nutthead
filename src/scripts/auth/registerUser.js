@@ -1,5 +1,5 @@
 import dbCalls from "./dbcalls.js"
-
+import loginUser from "./userLogin.js"
 const userAuthientication = {
 
     registerUser() {
@@ -26,6 +26,7 @@ const userAuthientication = {
             newUser.dateOfBirth = dateOfBirth.value
             dbCalls.postUser(newUser)
                 .then(response => response.json())
+                .then(loginUser());
         }
     }
 }
