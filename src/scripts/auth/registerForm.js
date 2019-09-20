@@ -12,7 +12,7 @@ function buildForm() {
         </fieldset>
         <fieldset>
             <label>Birthday:</label>
-            <input type="date" class="dateInput" id="date-input">
+            <input type="date" class="dateOfBirthInput" id="date-of-birth-input">
         </fieldset>
         <button type="button" class="registerButton" id="register-button">Register</button>
     </form>
