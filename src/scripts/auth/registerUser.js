@@ -12,7 +12,7 @@ const userAuthientication = {
             password: "",
             dateOfBirth: ""
         }
-        // let dateNow = Date()
+        let dateNow = Date()
 
         // console.log(dateOfBirth.value)
         // if ((dateNow.getFullYear() - dateOfBirth.value) < 17 && (dateNow.getFullYear() - dateOfBirth.value) > 15) {

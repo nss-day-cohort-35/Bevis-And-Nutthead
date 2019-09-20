@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-function buildForm(){
-    return `
-    <form>
-        <fieldset id="email">
-            <label>Password:</label>
-            <input type="text" placeholder="Email">
-        </fieldset>
-        <fieldset>
-            <label>Birthday:</label>
-            <input type="date">
-        </fieldset>
-    </form>
-=======
 function buildForm() {
     return `
     <div class="registerForm">
@@ -31,7 +17,6 @@ function buildForm() {
         <button type="button" class="registerButton" id="register-button">Register</button>
     </form>
     </div>
->>>>>>> b7a53d10460fba7907544c8c3ad0b36b4473b9c8
     `
 }
 
