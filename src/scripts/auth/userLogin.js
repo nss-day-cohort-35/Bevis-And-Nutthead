@@ -1,6 +1,6 @@
 import dbcalls from "./dbcalls.js"
 import taskForm from "../tasks/taskForm.js"
-
+import eventForm from "../events/event.js"
 let container = document.querySelector("#container")
 const login = {
 
@@ -14,6 +14,7 @@ const login = {
                 sessionStorage.setItem("email", user[0].email);
                 container.innerHTML = ""
                 taskForm();
+                eventForm();
                 console.log("user", user[0].email);
             }
         })
