@@ -1,3 +1,46 @@
+body {
+    background-image: url(Images/skullpaper.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    font-family: "New Old English";
+    font-size: 20px;
+    text-shadow: black;
+    min-width: 500px;
+    letter-spacing: 5px;
+    color: #a17da7;
+}
+.loginButton, 
+.registerButton, 
+.newsFormButton, 
+.saveTask,
+.saveEventButton,
+.editEventButton
+  {
+    background-color: #a17da7;
+    border: outset 3px #000000;
+    font-family: "New Old English";
+    font-size: 20px;
+}
+
+.eventInput,
+.dateEventInput,
+.locationInput,
+.newsName,
+.newsSummaryField,
+.taskNameInput,
+.taskDescriptionInput,
+.urlField,
+.dateField,
+.completionDate
+ {
+    background-color: #dccbdf;
+    opacity: .4;
+    border: outset 3px #000000;
+    font-family: "New Old English";
+    font-size: 20px;
+}
+
 .registerForm {
     margin: 5px;
     width: 50%;
@@ -29,18 +72,19 @@
 }
 
 .footer {
-    background:white;
+    background:#a17da7;
+    border: outset 3px #000000;
+    position: fixed;
     bottom: 0;
     width: 100%;
-    height: 84px;
-    /* border: 7px solid black; */
+    height: 4em;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
 .socialIcon {
-    height: 110px;
+    height: 100px;
     width: auto;
 }
 
@@ -51,7 +95,24 @@
     height: 40px;
     width: auto;
     z-index: 5;
+    padding-bottom: 4em;
+    align-items: center;
 }
 
 
 /* END OF FOOTER */
+
+/* HEADER */
+
+.navbar {
+    background: #a17da7 !important;
+    border: outset 3px #000000
+}
+.skullLogo {
+    width:100px;
+    height: auto
+}
+.navbar-logo {
+    display: inline-block;
+    width: 50% 
+}
