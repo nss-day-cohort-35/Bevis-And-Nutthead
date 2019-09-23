@@ -17,7 +17,6 @@ const taskCreation = {
         }
 
         dateArray.push(date);
-        console.log(dateArray[0].year)
         let newTask = {
             name: "",
             description: "",
@@ -34,10 +33,9 @@ const taskCreation = {
                     newTask.completionDate = taskCompletion.value,
                     newTask.completed = false,
                     newTask.userId = userId
-                console.log(newTask);
                 taskFetchs.postTask(newTask)
                     .then(task => task.json())
-                    .then(parsedTasks => console.log(parsedTasks))
+                    .then(parsedTasks => parsedTasks)
             }
         })
     }
