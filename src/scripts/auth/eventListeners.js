@@ -1,10 +1,11 @@
-import userAuthientication from "./registerUser.js"
-import login from "./userLogin.js"
-
+import userAuthientication from "./registerUser.js";
+import login from "./userLogin.js";
+import eventFormListener from "../articles/eventListeners.js";
 
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
 // let dateOfBirth = document.querySelector(".dateInput")
+let container = document.querySelector("#container");
 // let container = document.querySelector("#container")
 const eventListeners = {
 
@@ -17,13 +18,11 @@ const eventListeners = {
                 console.log(event)
                 login.emailLogin();
                 // alert("You gotta Sign Up!")
-            } else {
-                console.log("Hello")
-            }
+            } else if (event.target.classList.value === "saveEventButton") {
+                eventFormListener();
+                console.log("Hello");
+              }
         })
     }
 }
-
-
-
 export default eventListeners
