@@ -1,6 +1,7 @@
 import dbcalls from "./dbcalls.js"
 import taskForm from "../tasks/taskForm.js"
 import eventForm from "../events/event.js"
+import taskCreation from "../tasks/taskCreation.js"
 let container = document.querySelector("#container")
 const login = {
 
@@ -15,6 +16,7 @@ const login = {
                 container.innerHTML = ""
                 taskForm();
                 eventForm();
+                taskCreation.createTask()
                 console.log("user", user[0].email);
             }
         })
