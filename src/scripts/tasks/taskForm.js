@@ -14,6 +14,7 @@ const taskForm = () => {
                 <label class="taskLabel">When should it be done by? </label>
                 <input type="date" placeholder="Completion Date" class="completionDate">
             </fieldset>
+            <button type="button" class="saveTask">Save Task</button>
         </form>
     </div>
     `

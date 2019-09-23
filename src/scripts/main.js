@@ -1,7 +1,6 @@
 import eventListeners from "./auth/eventListeners.js"
 import buildForm from "./auth/registerForm.js"
 import loginForm from "./auth/loginForm.js"
-// import emailLogin from "./auth/userLogin.js"
 import eventForm from "./events/event.js"
 /*
     Import all the tools into main.js that are needed to display
@@ -21,5 +20,4 @@ import eventForm from "./events/event.js"
 const container = document.querySelector("#container")
 container.innerHTML += buildForm()
 container.innerHTML += loginForm()
-
 eventListeners.myListener()
