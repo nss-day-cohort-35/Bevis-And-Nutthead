@@ -1,6 +1,6 @@
 import userAuthientication from "./registerUser.js";
 import login from "./userLogin.js";
-import eventFormListener from "../articles/eventListeners.js";
+import eventFormListener from "../events/eventListeners.js";
 
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
