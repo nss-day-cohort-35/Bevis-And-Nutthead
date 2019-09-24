@@ -7,7 +7,7 @@ const taskCreation = {
         let taskName = document.querySelector(".taskNameInput");
         let taskDescription = document.querySelector(".taskDescriptionInput");
         let taskCompletion = document.querySelector(".completionDate");
-        let userId = sessionStorage.user_id;
+        let userId = sessionStorage.getItem("user_id", user_id);
         let dateNow = new Date();
 
         let date = {

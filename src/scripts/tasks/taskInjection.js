@@ -1,10 +1,11 @@
 import taskFetchs from "./taskFetchs.js"
 
 let container = document.querySelector("#container");
-let userId = sessionStorage.user_id;
+//let userId = sessionStorage.user_id;
 function taskBuilder() {
-    console.log(userId);
-    taskFetchs.getTasks(userId)
+    let userId = JSON.parse(sessionStorage.getItem("credentials"));
+    console.log("user",userId.userId);
+    taskFetchs.getTasks(userId.userId)
         .then(tasks => {
              for (let i = 0; i <= tasks.length; i++){
                   let myTask = `
