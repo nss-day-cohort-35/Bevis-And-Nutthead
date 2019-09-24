@@ -23,7 +23,6 @@ const login = {
         //newsFormListener();
         taskBuilder();
         //taskCreation.createTask();
-        console.log("user", user[0].email);
       }
     });
   },
