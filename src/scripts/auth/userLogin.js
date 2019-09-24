@@ -5,6 +5,7 @@ import dbcalls from "./dbcalls.js";
 //import newsFormListener from "../news/eventListeners.js";
 //import newsForm from "../news/newsForm.js"
 import taskBuilder from "../tasks/taskInjection.js";
+import taskFormButton from "../tasks/eventListeners.js";
 
 let container = document.querySelector("#container");
 const login = {
@@ -27,6 +28,8 @@ const login = {
         // eventForm();
         // newsForm();
         //newsFormListener();
+        taskFormButton.taskFormToDomButton();
+        taskFormButton.createNewTask
         taskBuilder();
         //taskCreation.createTask();
       }
