@@ -1,4 +1,5 @@
 function loginForm() {
+    sessionStorage.clear();
     return `
     <div class="loginForm">
         <form>

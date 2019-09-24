@@ -1,6 +1,6 @@
 const taskFetchs = {
     getTasks: (userId) => {
-        return fetch(`http://localhost:8088/tasks?="${userId}`)
+        return fetch(`http://localhost:8088/tasks?userId=${userId}`)
             .then(task => task.json())
     },
     postTask: (task) => {

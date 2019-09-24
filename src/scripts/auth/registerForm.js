@@ -1,4 +1,5 @@
 function buildForm() {
+    sessionStorage.clear();
     return `
     <div class="registerForm">
     <form>

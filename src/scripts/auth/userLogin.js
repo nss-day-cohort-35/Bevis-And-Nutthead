@@ -10,7 +10,6 @@ let container = document.querySelector("#container");
 const login = {
   emailLogin: () => {
     let emailInput = document.querySelector(".emailLoginInput").value;
-    sessionStorage.clear();
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidator(user);
       if (validator) {
