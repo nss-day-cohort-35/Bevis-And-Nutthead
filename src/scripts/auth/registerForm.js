@@ -1,6 +1,7 @@
 function buildForm() {
     sessionStorage.clear();
     return `
+    <div class="registerFormFlex">
     <div class="registerForm">
     <form>
         <fieldset id="email-fieldset">
@@ -17,6 +18,7 @@ function buildForm() {
         </fieldset>
         <button type="button" class="registerButton" id="register-button">Register</button>
     </form>
+    </div>
     </div>
     `
 }

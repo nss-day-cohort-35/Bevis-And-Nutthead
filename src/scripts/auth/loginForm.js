@@ -1,6 +1,7 @@
 function loginForm() {
     sessionStorage.clear();
     return `
+    <div class="loginFormFlex">
     <div class="loginForm">
         <form>
             <fieldset id="email">
@@ -13,6 +14,7 @@ function loginForm() {
             </fieldset>
             <button type="button" class="loginButton">Login</button>
         </form>
+    </div>
     </div>
     `
 }
