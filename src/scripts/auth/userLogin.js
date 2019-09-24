@@ -1,9 +1,10 @@
 import dbcalls from "./dbcalls.js";
-import taskForm from "../tasks/taskForm.js";
-import eventForm from "../events/event.js";
-import taskCreation from "../tasks/taskCreation.js";
-import newsFormListener from "../news/eventListeners.js";
-import newsForm from "../news/newsForm.js"
+//import taskForm from "../tasks/taskForm.js";
+//import eventForm from "../events/event.js";
+//import taskCreation from "../tasks/taskCreation.js";
+//import newsFormListener from "../news/eventListeners.js";
+//import newsForm from "../news/newsForm.js"
+import taskBuilder from "../tasks/taskInjection.js";
 
 let container = document.querySelector("#container");
 const login = {
@@ -16,11 +17,12 @@ const login = {
         sessionStorage.setItem("user_id", user[0].id);
         sessionStorage.setItem("email", user[0].email);
         container.innerHTML = "";
-        taskForm();
-        eventForm();
-        newsForm();
-        newsFormListener();
-        taskCreation.createTask();
+        // taskForm();
+        // eventForm();
+        // newsForm();
+        //newsFormListener();
+        taskBuilder();
+        //taskCreation.createTask();
         console.log("user", user[0].email);
       }
     });
