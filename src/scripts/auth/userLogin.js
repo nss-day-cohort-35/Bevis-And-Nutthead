@@ -1,27 +1,34 @@
 import dbcalls from "./dbcalls.js";
-import taskForm from "../tasks/taskForm.js";
-import eventForm from "../events/event.js";
-import taskCreation from "../tasks/taskCreation.js";
-import newsFormListener from "../news/eventListeners.js";
-import newsForm from "../news/newsForm.js"
+//import taskForm from "../tasks/taskForm.js";
+//import eventForm from "../events/event.js";
+//import taskCreation from "../tasks/taskCreation.js";
+//import newsFormListener from "../news/eventListeners.js";
+//import newsForm from "../news/newsForm.js"
+import taskBuilder from "../tasks/taskInjection.js";
 
 let container = document.querySelector("#container");
 const login = {
   emailLogin: () => {
     let emailInput = document.querySelector(".emailLoginInput").value;
-    sessionStorage.clear();
+    let passwordInput = document.querySelector(".passwordLoginInput");
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidator(user);
       if (validator) {
-        sessionStorage.setItem("user_id", user[0].id);
-        sessionStorage.setItem("email", user[0].email);
+        sessionStorage.setItem(
+          "credentials",
+          JSON.stringify({
+            email: emailInput,
+            password: passwordInput.value,
+            userId: user[0].id
+          })
+        )
         container.innerHTML = "";
-        taskForm();
-        eventForm();
-        newsForm();
-        newsFormListener();
-        taskCreation.createTask();
-        console.log("user", user[0].email);
+        // taskForm();
+        // eventForm();
+        // newsForm();
+        //newsFormListener();
+        taskBuilder();
+        //taskCreation.createTask();
       }
     });
   },
@@ -32,18 +39,22 @@ const login = {
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidatorAfterRegistration(user);
       if (validator) {
-        sessionStorage.setItem("user_id", user[0].id);
-        sessionStorage.setItem("email", user[0].email);
+        sessionStorage.setItem(
+          "credentials",
+          JSON.stringify({
+            email: emailInput,
+            password: passwordInput.value,
+            userId: user[0].id
+          })
+        )
         container.innerHTML = "";
         taskForm();
-        console.log("user", user[0].email);
       }
     });
   }
 };
 const passwordValidator = user => {
   let passwordInput = document.querySelector(".passwordLoginInput").value;
-  console.log(passwordInput);
   if (passwordInput === user[0].password) {
     return true;
   } else {
@@ -54,7 +65,6 @@ const passwordValidator = user => {
 
 const passwordValidatorAfterRegistration = user => {
   let passwordInput = document.querySelector(".passwordInput").value;
-  console.log(passwordInput);
   if (passwordInput === user[0].password) {
     return true;
   } else {
