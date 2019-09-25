@@ -6,7 +6,6 @@ function newsFormListener() {
   let link = document.querySelector(".urlField");
   let summary = document.querySelector(".newsSummaryField");
   let userId = sessionStorage.user_id;
-  console.log(userId)
 
   let newNewsObj = {
     date: "",
@@ -24,7 +23,6 @@ function newsFormListener() {
         newNewsObj.summary = summary.value,
         newNewsObj.userId = userId;
         newsFetchs.postNews(newNewsObj)
-      console.log(newNewsObj);
     }
   });
 }

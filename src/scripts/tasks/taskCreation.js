@@ -25,8 +25,8 @@ const taskCreation = {
             completed: null,
             userId: null
         }
-        taskDiv.addEventListener("click", (event) => {
-            if (event.target.classList.value === "saveTask") {
+        // taskDiv.addEventListener("click", (event) => {
+        //     if (event.target.classList.value === "saveTask") {
                 newTask.name = taskName.value,
                     newTask.description = taskDescription.value,
                     newTask.entryDate = dateArray,
@@ -36,8 +36,8 @@ const taskCreation = {
                 taskFetchs.postTask(newTask)
                     .then(task => task.json())
                     .then(parsedTasks => parsedTasks)
-            }
-        })
+        //     }
+        // })
     }
 }
 export default taskCreation

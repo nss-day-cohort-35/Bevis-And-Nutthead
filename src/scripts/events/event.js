@@ -9,12 +9,12 @@ function eventForm() {
                 <input type="date" placeholder="Time or whatever" class="dateEventInput">
                 <input type="text" placeholder="Where even is it?" class="locationInput">
             </fieldset>
-            <button type="button" class="saveEventButton">Uuuugh I'll go</button>
-            <button type="button" class="editEventButton">Uuuugh that's wrong</button>
+            <button type="button" class="saveEventButton">Uuugh I'll go</button>
+            <button type="button" class="editEventButton">Uuugh that's wrong</button>
         </form> 
     </div>`
-    let container = document.querySelector("#container")
-    return container.innerHTML += form
+    let eventDiv = document.querySelector("#eventDiv")
+    return eventDiv.innerHTML += form
 }
 
 export default eventForm

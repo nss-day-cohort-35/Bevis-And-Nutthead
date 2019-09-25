@@ -1,6 +1,6 @@
 const taskForm = () => {
     let form = `
-    <div class="taskDiv"> 
+    <div> 
         <form>
             <fieldset>
                 <label class="taskLabel">Task name:</label>
@@ -11,15 +11,16 @@ const taskForm = () => {
                 <input type="text" placeholder="My task is..." class="taskDescriptionInput">
             </fieldset>
             <fieldset>
-                <label class="taskLabel">When should it be done by? </label>
+                <label class="taskLabel">When should it be done by?</label>
                 <input type="date" placeholder="Completion Date" class="completionDate">
             </fieldset>
             <button type="button" class="saveTask">Save Task</button>
         </form>
     </div>
     `
-    let container = document.querySelector("#container")
-    return container.innerHTML += form
+    let taskDiv = document.querySelector("#taskFlexDiv")
+    console.log("hi", taskDiv)
+    return taskDiv.innerHTML += form
 }
 
 export default taskForm

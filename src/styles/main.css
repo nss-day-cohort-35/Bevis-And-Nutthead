@@ -33,7 +33,7 @@ body {
     margin: 2em;
     border-radius: 8px;
     transition: .5s;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* ALL BUTTONS */
@@ -94,16 +94,33 @@ body {
 .loginForm {
     padding-top: 1em;
     width: 70%;
-
 }
 
-#container {
+#loginDiv,
+#eventDiv,
+#taskDiv,
+#newsDiv,
+#chatDiv {
     padding-top: 2em;
     align-items: center;
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
+
+#eventDiv,
+#taskDiv,
+#newsDiv,
+#chatDiv {
+    display: flex;
+    justify-content: center;
+    height: 350px;  
+    width: 350px;
+    margin: 2em;
+    border-radius: 8px;
+    transition: .5s;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
  /* END ALL INPUT AND TEXT FIELDS */
 
 /* HEADER */
