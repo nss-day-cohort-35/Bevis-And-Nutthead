@@ -15,6 +15,7 @@ const login = {
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidator(user);
       if (validator) {
+        container.innerHTML = "";
         sessionStorage.setItem(
           "credentials",
           JSON.stringify({
@@ -23,15 +24,9 @@ const login = {
             userId: user[0].id
           })
         )
-        container.innerHTML = "";
-        // taskForm();
-        // eventForm();
-        // newsForm();
-        //newsFormListener();
-        taskFormButton.taskFormToDomButton();
-        taskBuilder();
-        //taskCreation.createTask();
-      }
+       taskBuilder();
+       taskFormButton.taskFormToDomButton();
+        }
     });
   },
 
