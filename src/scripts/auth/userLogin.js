@@ -6,6 +6,7 @@ import dbcalls from "./dbcalls.js";
 //import newsForm from "../news/newsForm.js"
 import taskBuilder from "../tasks/taskInjection.js";
 import taskFormButton from "../tasks/eventListeners.js";
+import newsFormButton from "../news/eventListeners.js"
 
 let container = document.querySelector("#container");
 const login = {
@@ -24,9 +25,10 @@ const login = {
             userId: user[0].id
           })
         )
-       taskBuilder();
-       taskFormButton.taskFormToDomButton();
-        }
+        taskBuilder();
+        taskFormButton.taskFormToDomButton();
+        newsFormButton.newsFormToDomButton();
+      }
     });
   },
 
