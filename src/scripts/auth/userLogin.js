@@ -5,6 +5,7 @@ import dbcalls from "./dbcalls.js";
 //import newsFormListener from "../news/eventListeners.js";
 //import newsForm from "../news/newsForm.js"
 import taskBuilder from "../tasks/taskInjection.js";
+import taskFormButton from "../tasks/eventListeners.js";
 
 let container = document.querySelector("#container");
 const login = {
@@ -14,6 +15,7 @@ const login = {
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidator(user);
       if (validator) {
+        container.innerHTML = "";
         sessionStorage.setItem(
           "credentials",
           JSON.stringify({
@@ -22,14 +24,9 @@ const login = {
             userId: user[0].id
           })
         )
-        container.innerHTML = "";
-        // taskForm();
-        // eventForm();
-        // newsForm();
-        //newsFormListener();
-        taskBuilder();
-        //taskCreation.createTask();
-      }
+       taskBuilder();
+       taskFormButton.taskFormToDomButton();
+        }
     });
   },
 

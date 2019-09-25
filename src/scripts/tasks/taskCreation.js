@@ -7,7 +7,7 @@ const taskCreation = {
         let taskName = document.querySelector(".taskNameInput");
         let taskDescription = document.querySelector(".taskDescriptionInput");
         let taskCompletion = document.querySelector(".completionDate");
-        let userId = sessionStorage.getItem("user_id", user_id);
+        let credentials = JSON.parse(sessionStorage.getItem("credentials"));
         let dateNow = new Date();
 
         let date = {
@@ -32,7 +32,7 @@ const taskCreation = {
                     newTask.entryDate = dateArray,
                     newTask.completionDate = taskCompletion.value,
                     newTask.completed = false,
-                    newTask.userId = userId
+                    newTask.userId = credentials.userId
                 taskFetchs.postTask(newTask)
                     .then(task => task.json())
                     .then(parsedTasks => parsedTasks)
