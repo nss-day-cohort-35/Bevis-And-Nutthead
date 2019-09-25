@@ -29,7 +29,6 @@ const login = {
         // newsForm();
         //newsFormListener();
         taskFormButton.taskFormToDomButton();
-        taskFormButton.createNewTask
         taskBuilder();
         //taskCreation.createTask();
       }

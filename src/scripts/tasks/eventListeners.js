@@ -1,6 +1,3 @@
-import taskForm from "./taskForm.js"
-import taskCreation from "./taskCreation.js"
-
 let container = document.querySelector("#container");
 const taskFormButton = {
     taskFormToDomButton: () => {
@@ -10,17 +7,6 @@ const taskFormButton = {
         </div>
         `
         return container.innerHTML += buildTaskFormButton;
-    },
-    createNewTask: () => {
-        let taskFormToDomDiv = document.querySelector(".taskFormToDomButton");
-        taskFormToDomDiv.addEventListener("click", () => {
-            console.log("clicked")
-            container.innerHTML = "",
-                taskForm();
-            taskCreation.createTask(),
-                this.taskFormToDomButton(),
-                taskFormButton.createNewTask();
-        })
     }
 }
 export default taskFormButton;
