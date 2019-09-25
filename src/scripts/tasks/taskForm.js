@@ -1,6 +1,6 @@
 const taskForm = () => {
     let form = `
-    <div> 
+    <div class="taskFormFlex"> 
         <form>
             <fieldset>
                 <label class="taskLabel">Task name:</label>
@@ -18,9 +18,9 @@ const taskForm = () => {
         </form>
     </div>
     `
-    let taskDiv = document.querySelector("#taskFlexDiv")
-    console.log("hi", taskDiv)
-    return taskDiv.innerHTML += form
+    let container = document.querySelector("#container")
+    console.log("hi", container)
+    return container.innerHTML += form
 }
 
 export default taskForm

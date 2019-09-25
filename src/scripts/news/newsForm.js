@@ -22,8 +22,8 @@ function newsForm() {
         </form>
       </div>
       `;
-  let newsDiv = document.querySelector("#newsDiv");
-  return newsDiv.innerHTML += form;
+  let container = document.querySelector("#container");
+  return container.innerHTML += form;
 }
 
 export default newsForm;

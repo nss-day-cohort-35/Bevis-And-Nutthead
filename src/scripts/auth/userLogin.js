@@ -4,42 +4,53 @@ import newsFormListener from "../news/eventListeners.js";
 import newsForm from "../news/newsForm.js";
 import taskForm from "../tasks/taskForm.js";
 import dbcalls from "./dbcalls.js";
-import allForms from "../formInjections.js";
+import taskBuilder from "../tasks/taskInjection.js";
 
-let loginDiv = document.querySelector("#loginDiv");
+let loginDiv= document.querySelector("#loginDiv");
 const login = {
   emailLogin: () => {
     let emailInput = document.querySelector(".emailLoginInput").value;
+    let passwordInput = document.querySelector(".passwordLoginInput");
     sessionStorage.clear();
     dbcalls
       .getUserEmail(emailInput)
       .then(user => {
         let validator = passwordValidator(user);
         if (validator) {
-          sessionStorage.setItem("user_id", user[0].id);
-          sessionStorage.setItem("email", user[0].email);
+          sessionStorage.setItem(
+            "credentials",
+            JSON.stringify({
+              email: emailInput,
+              password: passwordInput.value,
+              userId: user[0].id
+            })
+          )
           loginDiv.innerHTML = "";
-          allForms();
-        }
-      })
-      .then(user => {
-        taskForm()
-        eventForm()
-        newsForm()
-        newsFormListener()
-        taskCreation.createTask()
-      });
+          taskBuilder();
+          taskForm()
+          eventForm()
+          newsForm()
+          newsFormListener()
+          taskCreation.createTask()
+      }});
   },
   registrationLogin: () => {
     let emailInput = document.querySelector(".emailInput").value;
+    let passwordInput = document.querySelector(".passwordLoginInput");
     sessionStorage.clear();
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidatorAfterRegistration(user);
       if (validator) {
-        sessionStorage.setItem("user_id", user[0].id);
-        sessionStorage.setItem("email", user[0].email);
-        loginDiv.innerHTML = "";
-        allForms();
+        sessionStorage.setItem(
+          "credentials",
+          JSON.stringify({
+            email: emailInput,
+            password: passwordInput.value,
+            userId: user[0].id
+          })
+        )
+        container.innerHTML = "";
+        taskForm();
       }
     });
   }

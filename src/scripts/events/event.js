@@ -13,8 +13,8 @@ function eventForm() {
             <button type="button" class="editEventButton">Uuugh that's wrong</button>
         </form> 
     </div>`
-    let eventDiv = document.querySelector("#eventDiv")
-    return eventDiv.innerHTML += form
+    let container = document.querySelector("#container")
+    return container.innerHTML += form
 }
 
 export default eventForm

@@ -37,7 +37,8 @@ body {
 }
 
 /* ALL BUTTONS */
-
+.editTaskButton,
+.completedButton,
 .loginButton, 
 .registerButton, 
 .newsFormButton, 
@@ -96,29 +97,27 @@ body {
     width: 70%;
 }
 
-#loginDiv,
-#eventDiv,
-#taskDiv,
-#newsDiv,
-#chatDiv {
-    padding-top: 2em;
-    align-items: center;
+#loginDiv {
     display: flex;
     justify-content: center;
 }
 
-#eventDiv,
-#taskDiv,
-#newsDiv,
-#chatDiv {
+
+.taskFormFlex,
+.eventForm,
+.newsFormDiv,
+.taskHeader
+ {
     display: flex;
     justify-content: center;
+    flex-direction: row; 
+    align-items: stretch;
     height: 350px;  
     width: 350px;
     margin: 2em;
     border-radius: 8px;
     transition: .5s;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: #ec7eff(0, 0, 0, 0.3)
 }
 
  /* END ALL INPUT AND TEXT FIELDS */
