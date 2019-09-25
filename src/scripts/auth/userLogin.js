@@ -1,7 +1,3 @@
-import eventForm from "../events/event.js";
-import taskCreation from "../tasks/taskCreation.js";
-import newsFormListener from "../news/eventListeners.js";
-import newsForm from "../news/newsForm.js";
 import taskForm from "../tasks/taskForm.js";
 import dbcalls from "./dbcalls.js";
 import taskBuilder from "../tasks/taskInjection.js";
@@ -16,6 +12,7 @@ const login = {
       let validator = passwordValidator(user);
       if (validator) {
         container.innerHTML = "";
+        loginDiv.innerHTML = "";
         sessionStorage.setItem(
           "credentials",
           JSON.stringify({
