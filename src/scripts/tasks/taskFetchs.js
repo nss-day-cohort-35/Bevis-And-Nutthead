@@ -11,6 +11,7 @@ const taskFetchs = {
             },
             body: JSON.stringify(task)
         })
+        .then(task => task.json())
     }
 }
 

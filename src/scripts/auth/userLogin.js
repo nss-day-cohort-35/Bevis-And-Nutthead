@@ -5,34 +5,29 @@ import newsForm from "../news/newsForm.js";
 import taskForm from "../tasks/taskForm.js";
 import dbcalls from "./dbcalls.js";
 import taskBuilder from "../tasks/taskInjection.js";
+import taskFormButton from "../tasks/eventListeners.js";
 
 let loginDiv= document.querySelector("#loginDiv");
 const login = {
   emailLogin: () => {
     let emailInput = document.querySelector(".emailLoginInput").value;
     let passwordInput = document.querySelector(".passwordLoginInput");
-    sessionStorage.clear();
-    dbcalls
-      .getUserEmail(emailInput)
-      .then(user => {
-        let validator = passwordValidator(user);
-        if (validator) {
-          sessionStorage.setItem(
-            "credentials",
-            JSON.stringify({
-              email: emailInput,
-              password: passwordInput.value,
-              userId: user[0].id
-            })
-          )
-          loginDiv.innerHTML = "";
-          taskBuilder();
-          taskForm()
-          eventForm()
-          newsForm()
-          newsFormListener()
-          taskCreation.createTask()
-      }});
+    dbcalls.getUserEmail(emailInput).then(user => {
+      let validator = passwordValidator(user);
+      if (validator) {
+        container.innerHTML = "";
+        sessionStorage.setItem(
+          "credentials",
+          JSON.stringify({
+            email: emailInput,
+            password: passwordInput.value,
+            userId: user[0].id
+          })
+        )
+       taskBuilder();
+       taskFormButton.taskFormToDomButton();
+        }
+    });
   },
   registrationLogin: () => {
     let emailInput = document.querySelector(".emailInput").value;
