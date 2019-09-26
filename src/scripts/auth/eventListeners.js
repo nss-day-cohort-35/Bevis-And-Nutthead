@@ -7,6 +7,7 @@ import taskCreation from "../tasks/taskCreation.js";
 import taskBuilder from "../tasks/taskInjection.js"
 import newsForm from "../news/newsForm.js";
 import newsFormListener from "../news/newsCreation.js"
+import newsFormButton from "../news/eventListeners.js";
 
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
@@ -32,10 +33,13 @@ const eventListeners = {
           taskFormButton.taskFormToDomButton();
         taskBuilder();
       } else if (event.target.classList.value === "newsFormButton") {
-        console.log("listening");
         newsFormListener();
+        container.innerHTML = "";
+        newsFormButton.newsFormToDomButton();
       } else if (event.target.classList.value === "newsFormToDomButton") {
+        container.innerHTML = "";
         newsForm();
+        newsFormButton.newsFormToDomButton();
       }
     });
   }

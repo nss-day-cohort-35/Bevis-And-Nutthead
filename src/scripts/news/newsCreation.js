@@ -1,5 +1,6 @@
 import newsFetchs from "./newsFetch.js"
 import newsBuilder from "./newsInjection.js"
+import newsFormButton from "./eventListeners.js"
 
 function newsFormListener() {
     let newsDate = document.querySelector(".dateField");
@@ -23,6 +24,6 @@ function newsFormListener() {
         newNewsObj.summary = summary.value,
         newNewsObj.userId = userId.userId;
     newsFetchs.postNews(newNewsObj)
-        .then(newsBuilder());
+        .then(news => newsBuilder(news));
 }
 export default newsFormListener;
