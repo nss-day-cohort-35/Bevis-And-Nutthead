@@ -1,6 +1,8 @@
 import taskFetchs from "./taskFetchs.js";
 import taskBuilder from "./taskInjection.js";
-import taskFormButton from "./eventListeners"
+import taskFormButton from "./eventListeners.js"
+import newsFormButton from "../news/eventListeners.js"
+import eventFormButton from "../events/eventListeners.js"
 
 const taskCreation = {
   createTask() {
@@ -39,6 +41,8 @@ const taskCreation = {
       container.innerHTML = "";
       taskBuilder(response);
       taskFormButton.taskFormToDomButton();
+      newsFormButton.newsFormToDomButton();
+      eventFormButton.eventFormToDomButton();
     });
   }
 };

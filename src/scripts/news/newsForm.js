@@ -21,7 +21,7 @@ function newsForm() {
             <button type="button" class="newsFormButton">Click this dumb Button</button>
         </form>
       </div>
-      `;
+      `
   let container = document.querySelector("#container");
   return container.innerHTML += form;
 }
