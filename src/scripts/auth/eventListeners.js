@@ -5,6 +5,9 @@ import taskFormButton from "../tasks/eventListeners.js";
 import taskForm from "../tasks/taskForm.js";
 import taskCreation from "../tasks/taskCreation.js";
 import taskBuilder from "../tasks/taskInjection.js"
+import newsForm from "../news/newsForm.js";
+import newsFormListener from "../news/newsCreation.js"
+import newsFormButton from "../news/eventListeners.js";
 
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
@@ -21,14 +24,22 @@ const eventListeners = {
       } else if (event.target.classList.value === "saveEventButton") {
         eventFormListener();
       } else if (event.target.classList.value === "taskFormToDomButton") {
-          container.innerHTML = "",
-            taskForm();
-            taskCreation.createTask(),
-            taskFormButton.taskFormToDomButton()
+        container.innerHTML = "",
+          taskForm();
+        taskCreation.createTask(),
+          taskFormButton.taskFormToDomButton()
       } else if (event.target.classList.value === "saveTask") {
         container.innerHTML = "",
-        taskFormButton.taskFormToDomButton();
+          taskFormButton.taskFormToDomButton();
         taskBuilder();
+      } else if (event.target.classList.value === "newsFormButton") {
+        newsFormListener();
+        container.innerHTML = "";
+        newsFormButton.newsFormToDomButton();
+      } else if (event.target.classList.value === "newsFormToDomButton") {
+        container.innerHTML = "";
+        newsForm();
+        newsFormButton.newsFormToDomButton();
       }
     });
   }
