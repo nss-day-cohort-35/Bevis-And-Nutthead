@@ -1,6 +1,6 @@
 import newsFetchs from "./newsFetch.js"
 import newsBuilder from "./newsInjection.js"
-import newsFormButton from "./eventListeners.js"
+
 
 function newsFormListener() {
     let newsDate = document.querySelector(".dateField");
