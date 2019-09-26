@@ -28,6 +28,8 @@ const eventListeners = {
         eventFormListener();
         container.innerHTML = "";
         eventFormButton.eventFormToDomButton();
+        taskFormButton.taskFormToDomButton();
+        newsFormButton.newsFormToDomButton();
       } else if (event.target.classList.value === "eventFormToDomButton") {
         container.innerHTML = "",
           eventForm();
@@ -47,6 +49,8 @@ const eventListeners = {
             container.innerHTML = ""
             taskBuilder(tasks);
             taskFormButton.taskFormToDomButton();
+            eventFormButton.eventFormToDomButton();
+            newsFormButton.newsFormToDomButton();
           });
         });
       }
@@ -54,6 +58,8 @@ const eventListeners = {
         newsFormListener();
         container.innerHTML = "";
         newsFormButton.newsFormToDomButton();
+        taskFormButton.taskFormToDomButton();
+        eventFormButton.eventFormToDomButton();
       } else if (event.target.classList.value === "newsFormToDomButton") {
         container.innerHTML = "";
         newsForm();
