@@ -49,7 +49,10 @@ body {
 .saveTask,
 .saveEventButton,
 .editEventButton,
-.taskFormToDomButton
+.taskFormToDomButton,
+.eventFormToDomButton,
+.newsFormToDomButton,
+.editNewsButton
 {
     margin-top: 1em;
     background-color: #a17da7;
