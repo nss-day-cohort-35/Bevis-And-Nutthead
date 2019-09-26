@@ -23,7 +23,7 @@ function newsForm() {
       </div>
       `
   let container = document.querySelector("#container");
-  return (container.innerHTML += form);
+  return container.innerHTML += form;
 }
 
 export default newsForm;

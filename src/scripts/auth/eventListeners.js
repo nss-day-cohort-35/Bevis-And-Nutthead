@@ -7,6 +7,7 @@ import taskBuilder from "../tasks/taskInjection.js";
 import eventForm from "../events/eventForm.js";
 import eventFormListener from "../events/eventCreation.js";
 import eventFormButton from "../events/eventListeners.js";
+import taskFetchs from "../tasks/taskFetchs.js"
 import newsForm from "../news/newsForm.js";
 import newsFormListener from "../news/newsCreation.js";
 import newsFormButton from "../news/eventListeners.js";
@@ -14,11 +15,11 @@ import newsFormButton from "../news/eventListeners.js";
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
 // let dateOfBirth = document.querySelector(".dateInput")
-let container = document.querySelector("#container");
-// let container = document.querySelector("#container")
+let credentials = JSON.parse(sessionStorage.getItem("credentials"));
+let eventListenerDiv = document.querySelector("#eventListenerDiv");
 const eventListeners = {
   myListener() {
-    container.addEventListener("click", event => {
+    eventListenerDiv.addEventListener("click", event => {
       if (event.target.classList.value === "registerButton") {
         userAuthentication.registerUser();
       } else if (event.target.classList.value === "loginButton") {
@@ -32,14 +33,22 @@ const eventListeners = {
           eventForm();
         eventFormButton.eventFormToDomButton();
       } else if (event.target.classList.value === "taskFormToDomButton") {
-        container.innerHTML = "",
-          taskForm();
-        taskCreation.createTask(),
-          taskFormButton.taskFormToDomButton()
+        (container.innerHTML = ""), taskForm();
+        taskFormButton.taskFormToDomButton();
       } else if (event.target.classList.value === "saveTask") {
-        container.innerHTML = "",
-          taskFormButton.taskFormToDomButton();
-        taskBuilder();
+        taskCreation.createTask()
+      } else if (event.target.classList.value === "completedButton") {
+        let taskId = event.target.id.split("-")[1];
+        taskFetchs.getTask(taskId).then(task => {
+          task[0].completed = true;
+          taskFetchs.editTask(task[0])
+          .then(tasks => {
+            console.log(tasks)
+            container.innerHTML = ""
+            taskBuilder(tasks);
+            taskFormButton.taskFormToDomButton();
+          });
+        });
       }
       else if (event.target.classList.value === "newsFormButton") {
         newsFormListener();

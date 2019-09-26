@@ -1,6 +1,9 @@
 # Nutshell: The Information Dashboard
 
+## Team members: Nick Wessel, Sage Klein, Heidi Smith, David Cornish.
 ## Setup: Follow these steps exactly
+
+![Image description](https://dbdiagram.io/d/5d7fd38614d7fc1c039e0625)
 
 1. Clone this repository
 1. `cd` into the directory it creates

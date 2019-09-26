@@ -1,15 +1,11 @@
+import taskForm from "../tasks/taskForm.js";
 import dbcalls from "./dbcalls.js";
-//import taskForm from "../tasks/taskForm.js";
-//import eventForm from "../events/event.js";
-//import taskCreation from "../tasks/taskCreation.js";
-//import newsFormListener from "../news/eventListeners.js";
-//import newsForm from "../news/newsForm.js"
 import taskBuilder from "../tasks/taskInjection.js";
 import taskFormButton from "../tasks/eventListeners.js";
 import eventFormButton from "../events/eventListeners.js";
 import newsFormButton from "../news/eventListeners.js";
 
-let container = document.querySelector("#container");
+let loginDiv= document.querySelector("#loginDiv");
 const login = {
   emailLogin: () => {
     let emailInput = document.querySelector(".emailLoginInput").value;
@@ -18,6 +14,7 @@ const login = {
       let validator = passwordValidator(user);
       if (validator) {
         container.innerHTML = "";
+        loginDiv.innerHTML = "";
         sessionStorage.setItem(
           "credentials",
           JSON.stringify({
@@ -33,9 +30,9 @@ const login = {
         }
     });
   },
-
   registrationLogin: () => {
     let emailInput = document.querySelector(".emailInput").value;
+    let passwordInput = document.querySelector(".passwordLoginInput");
     sessionStorage.clear();
     dbcalls.getUserEmail(emailInput).then(user => {
       let validator = passwordValidatorAfterRegistration(user);

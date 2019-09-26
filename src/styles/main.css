@@ -11,6 +11,10 @@ body {
     color: #a17da7;
 }
 
+#eventListenerDiv {
+    overflow: auto;
+}
+
 .registerFormFlex
 {
     display: flex;
@@ -33,17 +37,19 @@ body {
     margin: 2em;
     border-radius: 8px;
     transition: .5s;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 /* ALL BUTTONS */
-
+.editTaskButton,
+.completedButton,
 .loginButton, 
 .registerButton, 
 .newsFormButton, 
 .saveTask,
 .saveEventButton,
-.editEventButton
+.editEventButton,
+.taskFormToDomButton
 {
     margin-top: 1em;
     background-color: #a17da7;
@@ -53,7 +59,6 @@ body {
     font-size: 20px;
     
 }
-
 /* END OF ALL BUTTONS */
 
 /* ALL INPUT AND TEXT FIELDS */
@@ -94,16 +99,30 @@ body {
 .loginForm {
     padding-top: 1em;
     width: 70%;
-
 }
 
-#container {
-    padding-top: 2em;
-    align-items: center;
+#loginDiv {
     display: flex;
-    flex-direction: row;
     justify-content: center;
 }
+
+.taskFormFlex,
+.eventForm,
+.newsFormDiv,
+.taskHeader
+ {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; 
+    align-items: stretch;
+    height: 350px;  
+    width: 350px;
+    margin: 2em;
+    border-radius: 8px;
+    transition: .5s;
+    background-color: #ec7eff(0, 0, 0, 0.3)
+}
+
  /* END ALL INPUT AND TEXT FIELDS */
 
 /* HEADER */

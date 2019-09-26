@@ -1,43 +1,49 @@
-import taskFetchs from "./taskFetchs.js"
+import taskFetchs from "./taskFetchs.js";
+import taskBuilder from "./taskInjection.js";
+import taskFormButton from "./eventListeners.js"
+import newsFormButton from "../news/eventListeners.js"
+import eventFormButton from "../events/eventListeners.js"
 
 const taskCreation = {
-    createTask() {
-        let dateArray = [];
-        let taskDiv = document.querySelector(".taskDiv");
-        let taskName = document.querySelector(".taskNameInput");
-        let taskDescription = document.querySelector(".taskDescriptionInput");
-        let taskCompletion = document.querySelector(".completionDate");
-        let credentials = JSON.parse(sessionStorage.getItem("credentials"));
-        let dateNow = new Date();
+  createTask() {
+    let dateArray = [];
+    let container = document.querySelector("#container");
+    let taskName = document.querySelector(".taskNameInput").value;
+    let taskDescription = document.querySelector(".taskDescriptionInput").value;
+    let taskCompletion = document.querySelector(".completionDate").value;
+    let credentials = JSON.parse(sessionStorage.getItem("credentials"));
+    let dateNow = new Date();
+    container.innerHTML = "";
 
-        let date = {
-         month: dateNow.getMonth(),
-         day: dateNow.getDay(),
-         year: dateNow.getFullYear()
-        }
+    let date = {
+      month: dateNow.getMonth(),
+      day: dateNow.getDay(),
+      year: dateNow.getFullYear()
+    };
 
-        dateArray.push(date);
-        let newTask = {
-            name: "",
-            description: "",
-            entryDate: "",
-            completionDate: "",
-            completed: null,
-            userId: null
-        }
-        taskDiv.addEventListener("click", (event) => {
-            if (event.target.classList.value === "saveTask") {
-                newTask.name = taskName.value,
-                    newTask.description = taskDescription.value,
-                    newTask.entryDate = dateArray,
-                    newTask.completionDate = taskCompletion.value,
-                    newTask.completed = false,
-                    newTask.userId = credentials.userId
-                taskFetchs.postTask(newTask)
-                    .then(task => task.json())
-                    .then(parsedTasks => parsedTasks)
-            }
-        })
-    }
-}
-export default taskCreation
+    dateArray.push(date);
+    let newTask = {
+      name: "",
+      description: "",
+      entryDate: "",
+      completionDate: "",
+      completed: null,
+      userId: null
+    };
+
+    (newTask.name = taskName),
+      (newTask.description = taskDescription),
+      (newTask.entryDate = dateArray),
+      (newTask.completionDate = taskCompletion),
+      (newTask.completed = false),
+      (newTask.userId = credentials.userId);
+    taskFetchs.postTask(newTask).then(response => {
+      container.innerHTML = "";
+      taskBuilder(response);
+      taskFormButton.taskFormToDomButton();
+      newsFormButton.newsFormToDomButton();
+      eventFormButton.eventFormToDomButton();
+    });
+  }
+};
+export default taskCreation;
