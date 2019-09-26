@@ -11,12 +11,11 @@ function eventBuilder() {
                 let myEvents = `
                    <div class="eventContainer">
                        <div class="eventHeader">
-                            <h2 class="eventName">Event: ${events[i].eventInput}</h2>
+                            <h2 class="eventName">Event: ${events[i].name}</h2>
                         </div>
                           <div class="eventContent">
-                            <h3 class="eventName">Name: ${events[i].eventInput}</h3>
-                            <p class="eventLocation">Location: ${events[i].locationInput}</p> 
-                           <p class="dateEvent">Event Date: ${events[i].dateEventInput[0].month}-${events[i].dateEventInput[0].day}-${events[i].dateEventInput[0].year}</p>
+                           <p class="eventLocation">Location: ${events[i].location}</p> 
+                           <p class="dateEvent">Event Date: ${events[i].date[0].month}-${events[i].date[0].day}-${events[i].date[0].year}</p>
                         </div>
                              <button type="button" class="completedButton" id="task-${i}">I guess I did it</button>
                             <button type="button" class="editTaskButton" id="task-edit-${i}">Damn it</button>

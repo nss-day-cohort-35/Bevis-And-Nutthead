@@ -29,6 +29,7 @@ const login = {
        taskBuilder();
        taskFormButton.taskFormToDomButton();
        eventFormButton.eventFormToDomButton();
+       newsFormButton.newsFormToDomButton();
         }
     });
   },

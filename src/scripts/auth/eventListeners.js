@@ -1,13 +1,14 @@
 import userAuthentication from "./registerUser.js";
 import login from "./userLogin.js";
-import eventFormListener from "../events/eventListeners.js";
 import taskFormButton from "../tasks/eventListeners.js";
 import taskForm from "../tasks/taskForm.js";
 import taskCreation from "../tasks/taskCreation.js";
-import taskBuilder from "../tasks/taskInjection.js"
+import taskBuilder from "../tasks/taskInjection.js";
 import eventForm from "../events/eventForm.js";
+import eventFormListener from "../events/eventCreation.js";
+import eventFormButton from "../events/eventListeners.js";
 import newsForm from "../news/newsForm.js";
-import newsFormListener from "../news/newsCreation.js"
+import newsFormListener from "../news/newsCreation.js";
 import newsFormButton from "../news/eventListeners.js";
 
 // let email = document.querySelector(".emailInput")
@@ -23,7 +24,13 @@ const eventListeners = {
       } else if (event.target.classList.value === "loginButton") {
         login.emailLogin();
       } else if (event.target.classList.value === "saveEventButton") {
-        eventFormListener.eventFormToDomButton();
+        eventFormListener();
+        container.innerHTML = "";
+        eventFormButton.eventFormToDomButton();
+      } else if (event.target.classList.value === "eventFormToDomButton") {
+        container.innerHTML = "",
+          eventForm();
+        eventFormButton.eventFormToDomButton();
       } else if (event.target.classList.value === "taskFormToDomButton") {
         container.innerHTML = "",
           taskForm();
@@ -33,11 +40,8 @@ const eventListeners = {
         container.innerHTML = "",
           taskFormButton.taskFormToDomButton();
         taskBuilder();
-      } else if (event.target.classList.value === "eventFormToDomButton") {
-        container.innerHTML = "",
-        eventForm();
-        }
-       else if (event.target.classList.value === "newsFormButton") {
+      }
+      else if (event.target.classList.value === "newsFormButton") {
         newsFormListener();
         container.innerHTML = "";
         newsFormButton.newsFormToDomButton();

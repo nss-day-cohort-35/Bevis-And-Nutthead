@@ -1,4 +1,6 @@
 import userEvent from "./eventFetch.js";
+import eventBuilder from "./eventInjector.js"
+
 // let formContainer = document.querySelector(".eventForm");
 function eventFormListener() {
   let eventName = document.querySelector(".eventInput").value;
@@ -16,9 +18,6 @@ function eventFormListener() {
   event.location = eventLocation;
   event.userId = userId.userId;
   userEvent.getUserEvent(event)
-    .then(event => event.json())
-    .then(parsedEvent => parsedEvent);
+    .then(events => eventBuilder(events));
 }
 export default eventFormListener;
-
-
