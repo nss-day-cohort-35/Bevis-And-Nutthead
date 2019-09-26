@@ -1,9 +1,14 @@
-# Nutshell: The Information Dashboard
+# Bevis-And-Nutthead
 
-## Team members: Nick Wessel, Sage Klein, Heidi Smith, David Cornish.
+## Nutshell: The Information Dashboard
+
+#### Team members: 
+
+Nick Wessel, Sage Klein, Heidi Smith, David Cornish.
+
 ## Setup: Follow these steps exactly
 
-![Image description](https://dbdiagram.io/d/5d7fd38614d7fc1c039e0625)
+![Our IRD](./erd.png)
 
 1. Clone this repository
 1. `cd` into the directory it creates
@@ -97,6 +102,7 @@ To help you along, here is a visualization of a few features, as envisioned by o
 ![nutshell features](./Nutshell.png)
 
 ## Keep in mind some tips for a good usable app
+
 1. Use acceptable conventions
    * Logo positioned at top left
    * Navigation across the top or down the left side
@@ -114,4 +120,3 @@ To help you along, here is a visualization of a few features, as envisioned by o
    * Short paragraphs
    * Bulleted lists
 7. Strive for consistency.
-# Bevis-And-Nutthead
