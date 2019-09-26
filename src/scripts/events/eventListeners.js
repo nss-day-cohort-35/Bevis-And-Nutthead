@@ -10,7 +10,3 @@ const eventFormButton = {
     }
 }
 export default eventFormButton;
-
-
-
-

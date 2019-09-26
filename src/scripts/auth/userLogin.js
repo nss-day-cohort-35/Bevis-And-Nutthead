@@ -7,8 +7,7 @@ import dbcalls from "./dbcalls.js";
 import taskBuilder from "../tasks/taskInjection.js";
 import taskFormButton from "../tasks/eventListeners.js";
 import eventFormButton from "../events/eventListeners.js";
-// import eventBuilder from "../events/eventInjector.js";
-
+import newsFormButton from "../news/eventListeners.js";
 
 let container = document.querySelector("#container");
 const login = {
