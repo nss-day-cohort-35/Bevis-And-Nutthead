@@ -6,6 +6,9 @@ import dbcalls from "./dbcalls.js";
 //import newsForm from "../news/newsForm.js"
 import taskBuilder from "../tasks/taskInjection.js";
 import taskFormButton from "../tasks/eventListeners.js";
+import eventFormButton from "../events/eventListeners.js";
+// import eventBuilder from "../events/eventInjector.js";
+
 
 let container = document.querySelector("#container");
 const login = {
@@ -26,6 +29,7 @@ const login = {
         )
        taskBuilder();
        taskFormButton.taskFormToDomButton();
+       eventFormButton.eventFormToDomButton();
         }
     });
   },

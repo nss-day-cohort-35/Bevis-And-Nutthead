@@ -5,6 +5,7 @@ import taskFormButton from "../tasks/eventListeners.js";
 import taskForm from "../tasks/taskForm.js";
 import taskCreation from "../tasks/taskCreation.js";
 import taskBuilder from "../tasks/taskInjection.js"
+import eventForm from "../events/eventForm.js";
 
 // let email = document.querySelector(".emailInput")
 // let password = document.querySelector(".passwordInput")
@@ -19,7 +20,7 @@ const eventListeners = {
       } else if (event.target.classList.value === "loginButton") {
         login.emailLogin();
       } else if (event.target.classList.value === "saveEventButton") {
-        eventFormListener();
+        eventFormListener.eventFormToDomButton();
       } else if (event.target.classList.value === "taskFormToDomButton") {
           container.innerHTML = "",
             taskForm();
@@ -29,7 +30,10 @@ const eventListeners = {
         container.innerHTML = "",
         taskFormButton.taskFormToDomButton();
         taskBuilder();
-      }
+      } else if (event.target.classList.value === "eventFormToDomButton") {
+        container.innerHTML = "",
+        eventForm();
+        }
     });
   }
 };
